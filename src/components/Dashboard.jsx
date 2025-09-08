@@ -61,6 +61,7 @@ const Dashboard = ({ user }) => {
         {sessions.map((s,i) => (
           <div className='session' key={i}>
             {s}
+            <button className='btn-mark'>Mark It</button>
           </div>
         ))}
       </div>

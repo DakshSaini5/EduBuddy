@@ -63,6 +63,7 @@ h3 {
 .card {
   background-color: var(--card-bg);
   padding: 1.5rem;
+  cursor: pointer;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   text-align: center;
@@ -114,6 +115,19 @@ h3 {
 .session:hover {
   transform: translateY(-5px);
   background-color: #f3f4f6; /* Light slate hover */
+}
+
+.btn-mark {
+  padding: 10px;
+  background: linear-gradient(90deg, #047857, #059669);
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  border: none;
+  right: 16px;
+  cursor: pointer;
+  margin-left: 600px;
 }
 
 @media (max-width: 768px) {
