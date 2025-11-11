@@ -15,7 +15,7 @@ $action = $data->action; // 'connect' or 'dismiss'
 
 try {
     if ($action == 'dismiss') {
-        // Just record the dismissal so we don't show them again
+        // (Unchanged)
         $stmt = $conn->prepare("
             INSERT INTO matches (user_one_id, user_two_id, status)
             VALUES (?, ?, 'declined')
@@ -25,9 +25,7 @@ try {
         $db->send_response(true, 'User dismissed.');
 
     } elseif ($action == 'connect') {
-        // This is the core logic
         
-        // 1. Check if the OTHER user has already liked US
         $stmt_check = $conn->prepare("
             SELECT match_id FROM matches
             WHERE user_one_id = ? AND user_two_id = ? AND status = 'pending'
@@ -37,27 +35,23 @@ try {
 
         if ($existing_match) {
             // --- IT'S A MATCH! ---
-            // They liked us, now we like them. Update the existing row to 'accepted'
             
-            // 1. Generate a unique Google Meet link
-            $meet_link = 'https://meet.google.com/' . bin2hex(random_bytes(3)) . '-' . bin2hex(random_bytes(4)) . '-' . bin2hex(random_bytes(3));
+            // 1. We NO LONGER generate a link.
+            //    We will set it to NULL.
             
-            // 2. Update their row
+            // 2. Update their row.
             $stmt_accept = $conn->prepare("
                 UPDATE matches
-                SET status = 'accepted', google_meet_link = ?
+                SET status = 'accepted', google_meet_link = NULL
                 WHERE match_id = ?
             ");
-            $stmt_accept->execute([$meet_link, $existing_match['match_id']]);
+            $stmt_accept->execute([$existing_match['match_id']]);
             
             // 3. Send back a "match" response
-            $db->send_response(true, 'It\'s a match!', ['match_status' => 'accepted', 'meet_link' => $meet_link]);
+            $db->send_response(true, 'It\'s a match!', ['match_status' => 'accepted']);
             
         } else {
-            // --- WE LIKED THEM FIRST ---
-            // They haven't liked us yet. Create a 'pending' request.
-            
-            // Check if we already have a pending request
+            // --- WE LIKED THEM FIRST --- (Unchanged)
             $stmt_check_own = $conn->prepare("SELECT match_id FROM matches WHERE user_one_id = ? AND user_two_id = ?");
             $stmt_check_own->execute([$user_id, $target_user_id]);
             
@@ -68,7 +62,6 @@ try {
                 ");
                 $stmt_insert->execute([$user_id, $target_user_id]);
             }
-            // Send back a "pending" response
             $db->send_response(true, 'Connect request sent.', ['match_status' => 'pending']);
         }
     }

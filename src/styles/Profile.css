@@ -261,3 +261,42 @@
   
   
 }
+
+/* --- ADD THIS TO THE BOTTOM of src/styles/Profile.css --- */
+
+.profile-pic-uploader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-pic-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.profile-pic-preview:hover {
+  border-color: var(--primary-green-main);
+  opacity: 0.8;
+}
+
+.profile-pic-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.profile-pic-btn:hover {
+  background: var(--border-color);
+}
