@@ -1,152 +1,229 @@
-:root {
-  --primary-color: #059669; /* Emerald Green */
-  --secondary-color: #10b981; /* Lighter Green */
-  --bg-color: #f9fafb; /* Light background */
-  --card-bg: #ffffff; /* White cards */
-  --text-color: #111827; /* Almost black text */
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --border-radius: 16px;
-}
+/* Note: The :root variables are now in index.css */
 
 .dash-main {
   padding: 2.5rem;
   font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
+  background-color: var(--bg-secondary);
   min-height: 100vh;
-  color: var(--text-color);
+  color: var(--text-primary);
 }
-
 .dash-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
-
 .dash-header h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--text-color);
+  color: var(--text-primary);
 }
 
+/* --- THIS IS THE FIX FOR THE BUTTON --- */
 .about-btn {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  border: none;
+  background-color: var(--bg-tertiary); /* Light/Dark gray */
+  color: var(--text-secondary); /* Dark/Light text */
+  border: 1.5px solid var(--border-color);
   padding: 0.75rem 1.5rem;
-  border-radius: 9999px; /* Pill shape */
+  border-radius: 9999px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none; /* Remove shadow */
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-size: 1rem;
 }
-
 .about-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--border-color);
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+  transform: translateY(-2px); /* Keep a little animation */
+  box-shadow: var(--shadow);
 }
+/* --- End of button fix --- */
 
-h3 {
+.dashboard-section {
+  margin-bottom: 3rem;
+}
+.dashboard-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.dashboard-section h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.matches-row {
+  color: var(--primary-green-main);
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  align-items: center;
+  gap: 0.75rem;
 }
-
-.card {
+.view-all-link {
+  font-weight: 600;
+  color: var(--primary-green-dark);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.view-all-link:hover {
+  text-decoration: underline;
+}
+.matches-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.mini-match-card {
   background-color: var(--card-bg);
-  padding: 1.5rem;
-  cursor: pointer;
+  padding: 1rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   text-align: center;
-  flex: 1 1 200px; /* Flexible and responsive */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.mini-match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
-
-.match-image {
-  width: 85px;
-  height: 90px;
+.match-image-mini {
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.75rem;
-  border: 3px solid var(--primary-color);
+  border: 3px solid var(--primary-green-main);
 }
-
 .match-name {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--text-primary);
 }
-
 .match-detail {
   font-size: 0.9rem;
-  color: #6b7280; /* Slate gray */
+  color: var(--text-tertiary);
 }
-
 .session-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
-.session {
+.session-card {
   background-color: var(--card-bg);
-  padding: 1.25rem;
+  padding: 1.25rem 1.5rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.session-info {
   font-weight: 500;
-  color: var(--text-color);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-
-.session:hover {
-  transform: translateY(-5px);
-  background-color: #f3f4f6; /* Light slate hover */
+.session-actions {
+  display: flex;
+  gap: 0.75rem;
 }
-
-.btn-mark {
-  padding: 10px;
-  background: linear-gradient(90deg, #047857, #059669);
-  border-radius: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  transform: translateY(0);
+.meet-link-btn, .respond-btn {
   border: none;
-  right: 16px;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  margin-left: 600px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
 }
-
+.meet-link-btn {
+  background-color: var(--primary-green-dark);
+  color: var(--text-on-primary);
+  text-decoration: none;
+}
+.meet-link-btn:hover {
+  background-color: #065f46;
+}
+.respond-btn.accept {
+  background-color: var(--primary-green-main);
+  color: var(--text-on-primary);
+}
+.respond-btn.dismiss {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+.respond-btn.dismiss:hover {
+  background-color: var(--border-color);
+}
 @media (max-width: 768px) {
-  .dash-main {
-    padding: 1rem;
-  }
-  .dash-header h2 {
-    font-size: 2rem;
-  }
-  .about-btn {
-    padding: 0.6rem 1.2rem;
-  }
-  .matches-row {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    width: 90%;
-    max-width: 300px;
-  }
+  .dash-main { padding: 1rem; }
+  .dash-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .dash-header h2 { font-size: 2rem; }
+  .matches-row { grid-template-columns: 1fr; }
+  .session-card { flex-direction: column; align-items: flex-start; }
+  .session-actions { width: 100%; }
+  .session-actions .respond-btn { flex: 1; justify-content: center; }
 }
 
+/* --- THIS FIXES THE SHARP EDGES --- */
+.personality-banner {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: var(--text-on-primary);
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius); /* <-- THIS IS THE LINE */
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.2);
+}
+.personality-banner-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.personality-banner-header .icon {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+.personality-banner-header h3 {
+  font-size: 1.5rem;
+  color: var(--text-on-primary);
+  font-weight: 700;
+  margin: 0;
+}
+.personality-banner-header span {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+.personality-banner p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0.75rem 0 1.5rem 0;
+  line-height: 1.6;
+}
+.personality-trait-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 1rem;
+}
+.personality-trait-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+}
+.personality-trait-item strong {
+  font-weight: 700;
+}
+.personality-trait-item span {
+  opacity: 0.8;
+}

@@ -1,58 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useAuth } from './context/AuthContext';
 
+// Page Components
 import Home from './components/Home';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
+import Login from './components/Login';       
+import Register from './components/Register'; 
+import Session from './components/Session';
+import MatchCardPage from './components/Matchcard';
 
-const MatchCard = () => <h1>MatchCard Page</h1>;
-const Session = () => <h1>Session Page</h1>;
-
-const HomeWrapper = ({ onSignIn }) => {
-  return <Home onSignIn={onSignIn} />;
-};
+// --- NEW: A loading screen component ---
+const AppLoading = () => (
+  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#f9fafb'}}>
+    <h2>Loading EduBuddy...</h2>
+  </div>
+);
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate();
+  // --- UPDATED: Get 'isLoggedIn' AND 'loading' ---
+  const { isLoggedIn, loading } = useAuth();
   const location = useLocation();
 
-  const isHomePage = location.pathname === '/';
+  // --- NEW: Show loading screen while checking session ---
+  if (loading) {
+    return <AppLoading />;
+  }
 
-  const handleSignIn = () => {
-    setIsLoggedIn(true);
-    navigate('/dashboard');
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    navigate('/');  
-  };
+  // --- (The rest of your App.jsx logic) ---
+  const showSidebar = isLoggedIn && location.pathname !== '/';
+  
+  if (isLoggedIn) {
+    return (
+      <div className="app-container" style={{ display: 'flex', height: '100vh' }}>
+        {showSidebar && <Sidebar />}
+        <main className="main-content-area" style={{ flexGrow: 1, padding: '20px', overflowY: 'auto' }}>
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/matchcard" element={<MatchCardPage />} />
+            <Route path="/session" element={<Session />} />
+            <Route path="*" element={<Navigate to="/dashboard" replace />} />
+          </Routes>
+        </main>
+      </div>
+    );
+  }
 
   return (
-    <div className="app-container" style={{ display: 'flex', height: '100vh' }}>
-      {isLoggedIn && !isHomePage ? (
-        <>
-          <Sidebar onLogout={handleLogout} />
-          <main className="main-content-area" style={{ flexGrow: 1, padding: '20px' }}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/dashboard" element={<Dashboard user="Alex" />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/matchcard" element={<MatchCard />} />
-              <Route path="/session" element={<Session />} />
-              <Route path="*" element={<Navigate to="/dashboard" replace />} />
-            </Routes>
-          </main>
-        </>
-      ) : (
-        <Routes>
-          <Route path="/" element={<HomeWrapper onSignIn={handleSignIn} />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      )}
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 

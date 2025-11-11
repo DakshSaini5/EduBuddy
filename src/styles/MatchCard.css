@@ -1,0 +1,114 @@
+.match-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.match-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+.match-comparison-data {
+  margin: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+}
+.match-data-point {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+.match-data-point strong {
+  color: var(--text-primary);
+  display: block;
+}
+.common-list {
+  font-style: italic;
+}
+.match-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.match-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.match-btn.connect {
+  background: linear-gradient(45deg, #047857, #059669);
+  color: var(--text-on-primary);
+}
+.match-btn.connect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+.match-btn.dismiss {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+.match-btn.dismiss:hover {
+  background: var(--border-color);
+}
+.match-personality {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-green-dark);
+  background: var(--primary-green-light);
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 8px;
+}
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius); /* <-- THIS IS THE LINE FOR ROUNDED EDGES */
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.filter-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+.filter-group select {
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--primary-green-main);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+.filter-reset-btn {
+  background: none;
+  border: none;
+  color: var(--primary-green-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  justify-self: end;
+  grid-column: -1;
+}
