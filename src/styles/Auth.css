@@ -1,0 +1,98 @@
+.auth-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+}
+.auth-form-wrapper {
+  max-width: 420px;
+  width: 100%;
+  margin: 48px auto;
+  padding: 32px 28px 24px 28px;
+  background: var(--bg-primary);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.auth-logo {
+  display: block;
+  width: 80px;
+  height: auto;
+  margin: 0 auto 24px auto;
+}
+.auth-form-wrapper h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #059669, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.auth-form label {
+  display: block;
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  margin-top: 18px;
+}
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  width: 100%;
+  padding: 10px 13px;
+  margin-bottom: 4px;
+  border: 1.4px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  transition: border 0.22s;
+  box-sizing: border-box;
+}
+.auth-form input[type="text"]:focus,
+.auth-form input[type="email"]:focus,
+.auth-form input[type="password"]:focus {
+  border-color: var(--primary-green-main);
+  background: var(--bg-primary);
+  outline: none;
+}
+.auth-form button {
+  margin-top: 28px;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.11rem;
+  background: linear-gradient(90deg, #047857, #059669);
+  color: var(--text-on-primary);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.auth-form button:hover:not([disabled]) {
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+  transform: translateY(-2px);
+}
+.auth-switch-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: var(--text-tertiary);
+}
+.auth-switch-link a {
+  color: var(--primary-green-main);
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-switch-link a:hover {
+  text-decoration: underline;
+}
+.auth-error {
+  color: #e53e3e;
+}
+.auth-message {
+  color: var(--primary-green-main);
+}

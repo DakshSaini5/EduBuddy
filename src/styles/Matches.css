@@ -1,0 +1,121 @@
+:root {
+  --primary-color: #059669;
+  --secondary-color: #10b981;
+  --bg-color: #f9fafb;
+  --card-bg: #ffffff;
+  --text-color: #111827;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --border-radius: 16px;
+  --warning-color: #b45309;
+}
+
+.matches-page {
+  padding: 2.5rem;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+.matches-page h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.notice {
+  color: var(--warning-color);
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background-color: #fef3c7;
+  border: 2px solid var(--warning-color);
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  border: 2px solid var(--border-color);
+  border-radius: 24px; /* Smoother edges for match cards */
+  padding: 1.75rem;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-color);
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.card-meta {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-meta::before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-right: 0.25rem;
+}
+
+.card .btn-primary {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.card .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card .btn-primary:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .matches-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .matches-page h2 {
+    font-size: 2rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
