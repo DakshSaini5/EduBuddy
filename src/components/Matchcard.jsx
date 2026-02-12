@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../styles/Dashboard.css'; 
-import '../styles/Matchcard.css'; 
+import '../styles/MatchCard.css'; 
 import avatar from '/avatar.png';
 // --- NEW: Import definitions and your profile hook ---
 import { TITLE_DEFINITIONS, TRAIT_DEFINITIONS } from '../utils/personalityDefs'; 

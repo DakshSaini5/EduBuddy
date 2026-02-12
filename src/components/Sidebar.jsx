@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext'; // 1. Import useTheme
-import '../styles/Sidebar.css'; // This will be your *new* CSS from below
+import '../styles/SideBar.css'; // This will be your *new* CSS from below
 import '../styles/ThemeToggle.css'; // 2. Import toggle CSS
 
 // --- NEW: Theme Toggle Component ---
