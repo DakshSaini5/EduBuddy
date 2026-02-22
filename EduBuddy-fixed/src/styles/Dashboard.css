@@ -1,0 +1,364 @@
+/* Note: The :root variables are now in index.css */
+
+.dash-main {
+  padding: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-secondary);
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.dash-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.about-btn {
+  background-color: var(--bg-tertiary); /* Light/Dark gray */
+  color: var(--text-secondary); /* Dark/Light text */
+  border: 1.5px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none; /* Remove shadow */
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.about-btn:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+  transform: translateY(-2px); /* Keep a little animation */
+  box-shadow: var(--shadow);
+}
+
+.dashboard-section {
+  margin-bottom: 3rem;
+}
+.dashboard-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.dashboard-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-green-main);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.view-all-link {
+  font-weight: 600;
+  color: var(--primary-green-dark);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.view-all-link:hover {
+  text-decoration: underline;
+}
+.matches-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.mini-match-card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.mini-match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.match-image-mini {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  border: 3px solid var(--primary-green-main);
+}
+.match-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.match-detail {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+}
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.session-card {
+  background-color: var(--card-bg);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.session-info {
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.session-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.meet-link-btn, .respond-btn {
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.meet-link-btn {
+  background-color: var(--primary-green-dark);
+  color: var(--text-on-primary);
+  text-decoration: none;
+}
+.meet-link-btn:hover {
+  background-color: #065f46;
+}
+.respond-btn.accept {
+  background-color: var(--primary-green-main);
+  color: var(--text-on-primary);
+}
+.respond-btn.dismiss {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+.respond-btn.dismiss:hover {
+  background-color: var(--border-color);
+}
+@media (max-width: 768px) {
+  .dash-main { padding: 1rem; }
+  .dash-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .dash-header h2 { font-size: 2rem; }
+  .matches-row { grid-template-columns: 1fr; }
+  .session-card { flex-direction: column; align-items: flex-start; }
+  .session-actions { width: 100%; }
+  .session-actions .respond-btn { flex: 1; justify-content: center; }
+}
+
+.personality-banner {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: var(--text-on-primary);
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.2);
+}
+.personality-banner-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.personality-banner-header .icon {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+.personality-banner-header h3 {
+  font-size: 1.5rem;
+  color: var(--text-on-primary);
+  font-weight: 700;
+  margin: 0;
+}
+.personality-banner-header span {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+.personality-banner p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0.75rem 0 1.5rem 0;
+  line-height: 1.6;
+}
+.personality-trait-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 1rem;
+}
+.personality-trait-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+}
+.personality-trait-item strong {
+  font-weight: 700;
+}
+.personality-trait-item span {
+  opacity: 0.8;
+}
+
+/* --- Styles for Session Page (Reused by Dashboard) --- */
+
+.session-text {
+  display: flex;
+  flex-direction: column;
+}
+.session-text strong {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+.session-text span {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+.session-text .session-time {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-green-main);
+  margin-top: 4px;
+}
+
+.connection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.connection-card {
+  background: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.connection-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.connection-info strong {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.connection-info span {
+  font-size: 0.95rem;
+  color: var(--text-tertiary);
+}
+.connection-personality {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-green-dark);
+  background: var(--primary-green-light);
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 8px;
+  align-self: flex-start;
+}
+[data-theme="dark"] .connection-personality {
+  background-color: var(--primary-green-main);
+  color: var(--text-on-primary);
+}
+
+.plan-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  background: var(--primary-green-main);
+  color: var(--text-on-primary);
+}
+.plan-btn:hover {
+  background: var(--primary-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+/* --- ADD THIS TO THE BOTTOM of src/styles/Dashboard.css --- */
+
+.session-actions-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .session-actions-vertical {
+    width: auto; /* On desktop, don't force full width */
+    min-width: 200px; /* Give it some space */
+  }
+}
+
+.meet-link-btn.create {
+  background: #3b82f6; /* Blue for "Create" */
+}
+.meet-link-btn.create:hover {
+  background: #2563eb;
+}
+
+.save-link-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.save-link-wrapper input {
+  flex: 1;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+.save-link-wrapper button {
+  border: none;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 0 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.save-link-wrapper button:hover {
+  background: var(--border-color);
+}

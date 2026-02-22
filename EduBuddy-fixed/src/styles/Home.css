@@ -1,0 +1,345 @@
+/* Global styles for the landing page */
+.landing-page {
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  background-color: #f9fafb;
+}
+
+/* Header and Navigation */
+.header {
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 16px 16px;
+}
+
+.logo {
+  font-size: 1.875rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #059669, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link-item {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2937;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-link-item:hover {
+  color: #059669;
+}
+
+.cta-button {
+  padding: 0.625rem 1.5rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #047857, #059669);
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.section-hero {
+  position: relative;
+  padding: 4rem 0;
+  background-color: #ffffff;
+  background-image: url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/05a80b46-7083-475c-8fee-aa82b5ff74a9.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 40vw auto;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.hero-context {
+  max-width: 100%;
+  margin: 0;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+}
+
+.text-context {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  padding-left: 20px;
+  color: #111827;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #059669, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.her-subheading {
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  padding-left: 20px;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.primary-cta {
+  font-weight: 700;
+  margin-left: 20px;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(45deg, #047857, #059669);
+  border-radius: 9999px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-cta {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  color: #059669;
+  border: 2px solid #059669;
+  border-radius: 9999px;
+  background: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.secondary-cta:hover {
+  background-color: #059669;
+  color: white;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  max-width: 85%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(5, 150, 105, 0.25), 0 0 20px rgba(16, 185, 129, 0.25);
+}
+
+/* Study Techniques Section */
+.techniques-section {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+
+.techniques-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.techniques-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #111827;
+}
+
+.techniques-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.technique-card {
+  background-color: #f9fafb;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+  text-align: center;
+  cursor: pointer;
+  will-change: transform, box-shadow;
+}
+
+.technique-card:hover,
+.technique-card:focus-within {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px 0 rgba(5, 150, 105, 0.3),
+              0 1.5px 8px rgba(0, 0, 0, 0.07);
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+.technique-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #059669;
+}
+
+.technique-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.technique-description {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 5rem 0;
+  background: linear-gradient(45deg, #047857, #059669);
+  text-align: center;
+  color: white;
+}
+
+.cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.cta-heading {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cta-subheading {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button-white {
+  padding: 0.75rem 2.5rem;
+  font-weight: 700;
+  color: #059669;
+  background-color: white;
+  border-radius: 9999px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #111827;
+  color: #9ca3af;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-link {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #059669;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+  .hero-context {
+    flex-direction: row;
+    text-align: left;
+    gap: 3rem;
+  }
+  .text-context {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero-cta-group {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .image-container {
+    justify-content: flex-end;
+  }
+}

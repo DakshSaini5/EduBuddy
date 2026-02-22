@@ -1,0 +1,182 @@
+/* --- Filter Bar (Unchanged) --- */
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.filter-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+.filter-group select {
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--primary-green-main);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+.filter-reset-btn {
+  background: none;
+  border: none;
+  color: var(--primary-green-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  justify-self: end;
+  grid-column: -1;
+}
+
+/* --- Match Card Grid --- */
+.match-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --- NEW: Improved Match Card Styles --- */
+.match-card {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+.match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* NEW: Styles for the top part of the card */
+.match-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--primary-green-main);
+}
+.match-info {
+  margin-bottom: 0.5rem;
+}
+.match-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.match-detail {
+  font-size: 0.95rem;
+  color: var(--text-tertiary);
+  margin-bottom: 0.5rem;
+}
+.match-personality {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-green-dark);
+  background: var(--primary-green-light);
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* Styles for the middle section */
+.match-comparison-data {
+  margin: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+}
+.match-data-point {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+.match-data-point:last-child {
+  margin-bottom: 0;
+}
+.match-data-point strong {
+  color: var(--text-primary);
+  display: block;
+}
+.common-list {
+  font-style: italic;
+}
+
+/* Styles for the buttons */
+.match-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.match-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.match-btn.connect {
+  background: linear-gradient(45deg, #047857, #059669);
+  color: var(--text-on-primary);
+}
+.match-btn.connect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+.match-btn.dismiss {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+.match-btn.dismiss:hover {
+  background: var(--border-color);
+}
+/* --- ADD THIS TO THE BOTTOM of MatchCard.css --- */
+
+.common-traits-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.common-trait-item {
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: var(--primary-green-light);
+  color: var(--primary-green-dark);
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+[data-theme="dark"] .common-trait-item {
+  /* Use the dark-mode green and white text */
+  background-color: var(--primary-green-main); 
+  color: var(--text-on-primary);
+}

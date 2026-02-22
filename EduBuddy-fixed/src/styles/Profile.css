@@ -1,0 +1,302 @@
+.profile-container {
+  max-width: 700px;
+  margin: 48px auto;
+  padding: 32px 28px 24px 28px;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+.profile-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.profile-header h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #059669, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.profile-header p {
+  font-size: 1.1rem;
+  color: var(--text-tertiary);
+  margin-top: 0.5rem;
+}
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.form-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+.form-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+.profile-form label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.profile-form input[type="text"],
+.profile-form input[type="time"],
+.profile-form input[type="number"],
+.profile-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.profile-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.profile-form input[type="text"]:focus,
+.profile-form input[type="time"]:focus,
+.profile-form input[type="number"]:focus,
+.profile-form textarea:focus {
+  border-color: var(--primary-green-main);
+  background: var(--bg-primary);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+  outline: none;
+}
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.tag-checkbox input[type="checkbox"],
+.tag-grid input[type="radio"] {
+  display: none;
+}
+.tag-checkbox label,
+.tag-grid input[type="radio"] + label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1.5px solid transparent;
+}
+.tag-checkbox label:hover,
+.tag-grid input[type="radio"] + label:hover {
+  background: var(--border-color);
+}
+.tag-checkbox input[type="checkbox"]:checked + label,
+.tag-grid input[type="radio"]:checked + label {
+  background: var(--primary-green-light);
+  color: var(--primary-green-dark);
+  border-color: var(--primary-green-main);
+}
+.social-input-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 600px) {
+  .social-input-group {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.social-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.social-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: var(--text-tertiary);
+}
+.social-input input[type="text"] {
+  padding-left: 45px;
+}
+.profile-form button[type="submit"] {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #047857, #059669);
+  color: var(--text-on-primary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.profile-form button[type="submit"]:hover:not([disabled]) {
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.3);
+  transform: translateY(-2px);
+}
+.profile-message {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 6px;
+}
+.profile-message.success {
+  background-color: var(--primary-green-light);
+  color: var(--primary-green-dark);
+}
+.profile-message.error {
+  background-color: #fdeaea;
+  color: #e53e3e;
+}
+.personality-card {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: var(--text-on-primary);
+  padding: 1.25rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+.personality-card h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+.personality-card p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+.trait-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 1rem;
+}
+.trait-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+}
+.trait-item strong {
+  font-weight: 700;
+}
+.trait-item span {
+  opacity: 0.8;
+}
+.quiz-cta-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, var(--bg-primary), var(--primary-green-light));
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border: 1.5px solid var(--primary-green-main);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.quiz-cta-card:hover {
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.15);
+  transform: translateY(-2px);
+}
+.quiz-cta-icon {
+  font-size: 2.5rem;
+  color: var(--primary-green-main);
+  flex-shrink: 0;
+}
+.quiz-cta-text h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-green-dark);
+  margin: 0 0 0.25rem 0;
+}
+.quiz-cta-text p {
+  font-size: 0.95rem;
+  color: var(--primary-green-dark);
+  margin: 0;
+}
+.input-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 600px) {
+  .input-grid-2 {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Fix for Dark Mode Pill Text */
+[data-theme="dark"] .tag-checkbox input[type="checkbox"]:checked + label,
+[data-theme="dark"] .tag-grid input[type="radio"]:checked + label {
+  
+  /* Use the main dark mode green as the background */
+  
+  
+  color:Or var(--text-on-primary) 
+  
+  
+}
+
+/* --- ADD THIS TO THE BOTTOM of src/styles/Profile.css --- */
+
+.profile-pic-uploader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-pic-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.profile-pic-preview:hover {
+  border-color: var(--primary-green-main);
+  opacity: 0.8;
+}
+
+.profile-pic-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.profile-pic-btn:hover {
+  background: var(--border-color);
+}
