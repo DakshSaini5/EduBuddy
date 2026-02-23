@@ -1,10 +1,9 @@
 <?php
 // --- CONFIGURATION ---
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root'); // Default XAMPP user
-define('DB_PASS', '');     // Default XAMPP password
-define('DB_NAME', 'edubuddy');
-
+define('DB_HOST', 'sql210.infinityfree.com');
+define('DB_USER', 'if0_41223538');
+define('DB_PASS', 'qlhCxTffMLEv6');
+define('DB_NAME', 'if0_41223538_edubuddy');
 // --- CORS HEADERS ---
 // Allow requests from the Vite dev server and same-origin production
 $allowed_origins = ['http://localhost:5173', 'http://localhost:3000', 'http://localhost'];

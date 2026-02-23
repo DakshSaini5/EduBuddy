@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
-        target: 'http://localhost/EduBuddy/EduBuddy-fixed',
-        changeOrigin: true,
-      }
+     '/api': {
+    target: 'https://studywithedulbuddy.infinityfreeapp.com',
+    changeOrigin: true,
+}
     }
   }
 })
